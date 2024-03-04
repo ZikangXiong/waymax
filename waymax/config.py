@@ -16,6 +16,9 @@
 import dataclasses
 import enum
 from typing import Optional, Sequence
+import os
+
+DEFAULT_DATA_PATH = f"{os.environ['HOME']}/data/wod"
 
 
 class CoordinateFrame(enum.Enum):
@@ -280,6 +283,18 @@ WOD_1_0_0_TRAINING = DatasetConfig(
 
 WOD_1_0_0_VALIDATION = DatasetConfig(
     path='gs://waymo_open_dataset_motion_v_1_0_0/uncompressed/tf_example/validation/validation_tfexample.tfrecord@150',
+    max_num_rg_points=20000,
+    data_format=DataFormat.TFRECORD,
+)
+
+WOD_1_0_0_TRAINING_LOCAL = DatasetConfig(
+    path=f'{DEFAULT_DATA_PATH}/1_0_0/training/training_tfexample.tfrecord@1000',
+    max_num_rg_points=20000,
+    data_format=DataFormat.TFRECORD,
+)
+
+WOD_1_0_0_VALIDATION_LOCAL = DatasetConfig(
+    path=f'{DEFAULT_DATA_PATH}/1_0_0/validation/validation_tfexample.tfrecord@150',
     max_num_rg_points=20000,
     data_format=DataFormat.TFRECORD,
 )
