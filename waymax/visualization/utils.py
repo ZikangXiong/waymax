@@ -38,7 +38,7 @@ class VizConfig:
   front_y: float = 75.0
   back_y: float = 75.0
   px_per_meter: float = 4.0
-  show_agent_id: bool = True
+  show_agent_id: bool = False
   center_agent_idx: int = -1  # -1 for SDC
   verbose: bool = True
 
