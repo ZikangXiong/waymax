@@ -311,6 +311,18 @@ WOD_1_1_0_VALIDATION = DatasetConfig(
     data_format=DataFormat.TFRECORD,
 )
 
+WOD_1_1_0_TRAINING_LOCAL = DatasetConfig(
+    path=f"{DEFAULT_DATA_PATH}/1_1_0/training/training_tfexample.tfrecord@1000",
+    max_num_rg_points=20000,
+    data_format=DataFormat.TFRECORD,
+)
+
+WOD_1_1_0_VALIDATION_LOCAL = DatasetConfig(
+    path=f'{DEFAULT_DATA_PATH}/1_1_0/validation/validation_tfexample.tfrecord@150',
+    max_num_rg_points=20000,
+    data_format=DataFormat.TFRECORD,
+)
+
 WOD_1_2_0_TEST = DatasetConfig(
     path='gs://waymo_open_dataset_motion_v_1_2_0/uncompressed/tf_example/testing/testing_tfexample.tfrecord@150',
     max_num_rg_points=30000,
